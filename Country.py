@@ -1,4 +1,4 @@
-#MovieGuidePart1 Made by Alon Rehin for CIS 261
+#Country Made by Alon Rehin for CIS 261
 
 def countries():
 
