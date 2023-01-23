@@ -26,26 +26,28 @@ def intro():
 
 
 def display(List):
-    Number = 0
+        Number = 0
 
-    for country in List:
-        Number += 1
-        print(str(Number) + ".",country, "-", (List[country]))
-     
-    return Number
+        for country in List:
+            Number += 1
+            print(str(Number) + ".",country)#, "-", (List[country]))
+   
+        View = input("\nWhich country you want to see? ").upper()
+        print(List[View])
+        return Number
   
 
 def delete(List,Number):
 
-    DelCode = input("Which country code you want to delete? ").upper()
+    DelCode = input("\nWhich country code you want to delete? ").upper()
 
     if not DelCode in List:
-        print("Not found in list")
+        print("\nNot found in list")
 
     else:           
             del List[DelCode]
-            print("Deleted")
-     return List
+            print("\nDeleted")
+    return List
 
 
         
@@ -57,19 +59,17 @@ def add(List):
         print("\nAdd only country codes")
 
     elif AddInput and AddCode in List:
-        print("Already exists")
+        print("\nAlready exists")
 
     else:
         List[AddCode] = AddInput
-        print("Added")
+        print("\nAdded")
     return List
 
 
 intro()
 
 List=countries()
-
-Number=display(List)
 
 Command = input("\nWhat do you want to do? ")
 
@@ -78,7 +78,7 @@ while Command.lower() != "exit":
 
     if Command.lower() == "list":
         print("\nYour countries:\n")
-        display(List)
+        Number=display(List)
         Command = input("\nWhat do you want to do? ")
 
     elif Command.lower() == "del":
